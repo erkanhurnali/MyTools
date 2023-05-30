@@ -34,6 +34,7 @@ def main(page: Page):
     page.window_resizable = False
     page.window_focused = False
     page.window_bgcolor = ft.colors.TRANSPARENT
+    page.bgcolor = ft.colors.TRANSPARENT
     page.window_maximizable=False
     page.window_minimizable=False
     page.window_maximized=False
@@ -59,7 +60,6 @@ def main(page: Page):
         selected_icon=icons.MOUSE,
         ipucu="Right Click",
         color=colors.TEAL,
-        # page=page
     )
 
     main_row.controls.append(
