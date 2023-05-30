@@ -84,8 +84,6 @@ def main(page: Page):
         ipucu="Change Active Program", 
         color=colors.CYAN
     ))
-    # main_row.controls.append(utils.Countdown(30))
-    # textField = ft.Ref[TextField]()
 
     textField = TextField(
         text_size=30,
@@ -98,11 +96,8 @@ def main(page: Page):
         ipucu="Read",
         selected_icon=icons.VOLUME_UP,
         color=colors.CYAN_ACCENT,
-        # page=page,
-        # textField=textField.current,
         textField=textField
     )
-    # global speakText_row
     speakText_row = Row(controls=[textField, voiceButton],)
 
     speakText_row.visible = False
@@ -113,7 +108,6 @@ def main(page: Page):
         ipucu="Read the post", 
         color=colors.CYAN_ACCENT,
         speak_row=speakText_row,
-        # page=page,
     ))
 
     main_row.controls.append(

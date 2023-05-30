@@ -1,19 +1,25 @@
 import flet as ft
-import time
 
 def main(page: ft.Page):
-    audio1 = ft.Audio(
-        src="alarm.wav",autoplay=True
-    )
-    page.overlay.append(audio1)
-    # page.overlay.append(audio1)
-    page.update()
-    # page.update()
-    # time.sleep(1)
-    # audio1.pause()
-    # page.add(
-    #     ft.Text("This is an app with background audio."),
-    #     ft.ElevatedButton("Stop playing", on_click=lambda _: audio1.pause()),
-    # )
+    page.title = "Flet Chat"
 
-ft.app(target=main)
+    # subscribe to broadcast messages
+    def on_message(msg):
+        messages.controls.append(ft.Text(msg))
+        page.update()
+
+    page.pubsub.subscribe(on_message)
+
+    def send_click(e):
+        page.pubsub.send_all(f"{user.value}: {message.value}")
+        # clean up the form
+        message.value = ""
+        page.update()
+
+    messages = ft.Column()
+    user = ft.TextField(hint_text="Your name", width=150)
+    message = ft.TextField(hint_text="Your message...", expand=True)  # fill all the space
+    send = ft.ElevatedButton("Send", on_click=send_click)
+    page.add(messages, ft.Row(controls=[user, message, send]))
+
+ft.app(target=main, view=ft.WEB_BROWSER)
