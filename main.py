@@ -46,7 +46,7 @@ def main(page: Page):
     main_row.controls.append(
         MyButton(icon=icons.ADS_CLICK_OUTLINED,
                  selected_icon=icons.ADS_CLICK,
-                 ipucu="Bekleyek Tıklama", 
+                 ipucu="Click on it while waiting", 
                  color=colors.PURPLE),
 
     )
@@ -58,7 +58,7 @@ def main(page: Page):
     rightButton = RightButton(
         icon=icons.MOUSE_OUTLINED,
         selected_icon=icons.MOUSE,
-        ipucu="Sağ Tıklama",
+        ipucu="Right Click",
         color=colors.TEAL,
         # page=page
     )
@@ -70,19 +70,19 @@ def main(page: Page):
     main_row.controls.append(AlarmButton(
         icon=icons.NOTIFICATION_IMPORTANT_OUTLINED,
         selected_icon=icons.NOTIFICATION_IMPORTANT,
-        ipucu="Alarm", 
+        ipucu="Sound the alarm", 
         color=colors.AMBER,
     ))
     main_row.controls.append(OskButton(
         icon=icons.KEYBOARD_OUTLINED,
         selected_icon=icons.KEYBOARD,
-        ipucu="Ekan Klavyesi",
+        ipucu="On-Screen Keyboard",
         color=colors.PINK_ACCENT
     ))
     main_row.controls.append(ToogleButton(
         icon=icons.CHANGE_CIRCLE_OUTLINED,
         selected_icon=icons.CHANGE_CIRCLE,
-        ipucu="Aktif Programı Değiştir", 
+        ipucu="Change Active Program", 
         color=colors.CYAN
     ))
     # main_row.controls.append(utils.Countdown(30))
@@ -91,12 +91,12 @@ def main(page: Page):
     textField = TextField(
         text_size=30,
         width=450,
-        hint_text="Lütfen metni giriniz...",
+        hint_text="Please enter the text...",
         color=colors.CYAN_ACCENT,
     )
     voiceButton = VoiceButton(
         icon=icons.VOLUME_UP_OUTLINED,
-        ipucu="Oku",
+        ipucu="Read",
         selected_icon=icons.VOLUME_UP,
         color=colors.CYAN_ACCENT,
         # page=page,
@@ -111,7 +111,7 @@ def main(page: Page):
     main_row.controls.append(SpeakButton(
         icon=icons.RECORD_VOICE_OVER_OUTLINED,
         selected_icon=icons.RECORD_VOICE_OVER,
-        ipucu="Yazılnı Oku", 
+        ipucu="Read the post", 
         color=colors.CYAN_ACCENT,
         speak_row=speakText_row,
         # page=page,
@@ -122,8 +122,7 @@ def main(page: Page):
             icon=icons.SETTINGS_OUTLINED,
             selected_icon=icons.SETTINGS,
             color=colors.AMBER_900,
-            ipucu="Ayarlar",
-            # ofForm=sForm
+            ipucu="Settings",
         )
     )
 
