@@ -31,8 +31,7 @@ class MouseMonitoring(MyTimer):
                 print("sanal sağ tuş-pyautogui")
                 # button=button.right
                 # pyautogui.click(button='right')  # right-click the mouse
-                c_file="C:/Users/erkan/OneDrive/Belgeler/GitHub/MyTools/mylibl.so"
-                c_fun=CDLL(c_file)
+                c_fun=CDLL("./mylibl.so")
                 c_fun.swap(int(1))
 
 

@@ -3,7 +3,7 @@ from myButtons import MyButton
 from myAlarms import AlarmButton
 from myMouseButtons import RightButton
 import utils as utils
-from mykeyboars import OskButton
+from mykeyboars import OskButton, TouchKButton
 from mySpeakButton import SpeakButton, VoiceButton
 from myShrcuts import CutButton, ToogleButton
 from flet import Page, Container, IconButton, Row, icons, ProgressRing, Stack, colors, UserControl, TextField, Column
@@ -13,7 +13,6 @@ import time
 from tkinter import *
 import mySettinnsButton
 from myFletForTkTimer import FletForTkTimer
-# import utils.MyTimer
 from utils.MyTimer import MyTimer
 from utils.MouseMonitoring import MouseMonitoring
 from utils.MyTkTimerWithForm import MyTkTimerWithForm
@@ -43,17 +42,24 @@ def main(page: Page):
         spacing=0,
     )
 
-    main_row.controls.append(
-        MyButton(icon=icons.ADS_CLICK_OUTLINED,
-                 selected_icon=icons.ADS_CLICK,
-                 ipucu="Click on it while waiting", 
-                 color=colors.PURPLE),
-
-    )
+    # main_row.controls.append(
+    #     MyButton(icon=icons.ADS_CLICK_OUTLINED,
+    #              selected_icon=icons.ADS_CLICK,
+    #              ipucu="Click on it while waiting", 
+    #              color=colors.PURPLE),
+    # )
 
     # from clickWaiting import ClickWatingHiddenForm
     # main_row.controls.append(ClickWatingHiddenForm())
     # main_row.controls.append(FletForTkTimer())
+
+    main_row.controls.append(
+        TouchKButton(icon=icons.KEYBOARD_HIDE_OUTLINED,
+                 selected_icon=icons.KEYBOARD_HIDE,
+                 ipucu="Touch keyboard", 
+                 color=colors.PURPLE),
+    )
+
 
     rightButton = RightButton(
         icon=icons.MOUSE_OUTLINED,

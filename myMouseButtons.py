@@ -22,9 +22,7 @@ class RightButton(myButtons.MyButton):
         super().click(e=e)
         print("RightButton cilck fonksyonu çalışıyor")
 
-        # c_file="./mylibl.so"
-        c_file="C:/Users/erkan/OneDrive/Belgeler/GitHub/MyTools/mylibl.so"
-        c_fun=CDLL(c_file)
+        c_fun=CDLL("./mylibl.so")
         c_fun.swap(int(1))
         self.iconButton.selected = True
 
