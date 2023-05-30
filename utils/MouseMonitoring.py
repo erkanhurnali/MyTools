@@ -1,11 +1,14 @@
 from utils.MyTimer import MyTimer
 from pynput.mouse import Listener
 import flet as ft
+from ctypes import *
+
 
 import pyautogui
 
 class MouseMonitoring(MyTimer):
     rightButton =None
+    sagTiklandi = False
     def __init__(self,rb):
         super().__init__()
         self.rightButton = rb
@@ -20,17 +23,26 @@ class MouseMonitoring(MyTimer):
             print()
         print(f"{button} ")
         print('\bBasıldı' if pressed else 'Bırakıldı')
+        if (button == button.right) and (self.rightButton.iconButton.selected == True) and (self.sagTiklandi==False):
+            self.sagTiklandi = True
+        else:
 
-        if (button == button.left) and (not self.rightButton.is_hover) and (not pressed) and (self.rightButton.selected):
-            print("sanal sağ tuş-pyautogui")
-            button=button.right
-            pyautogui.click(button='right')  # right-click the mouse
+            if (button == button.right) and (self.rightButton.iconButton.selected == True) and (self.sagTiklandi):
+                print("sanal sağ tuş-pyautogui")
+                # button=button.right
+                # pyautogui.click(button='right')  # right-click the mouse
+                c_file="C:/Users/erkan/OneDrive/Belgeler/GitHub/MyTools/mylibl.so"
+                c_fun=CDLL(c_file)
+                c_fun.swap(int(1))
 
-            audio2 = ft.Audio(
-                src="pop_giris.wav", autoplay=True)
-            self.rightButton.page.overlay.append(audio2)
-            self.rightButton.page.update()
-            self.rightButton.iconButton.selected = False
-            self.rightButton.update()
+
+                audio2 = ft.Audio(
+                    src="pop_giris.wav", autoplay=True)
+                self.rightButton.page.overlay.append(audio2)
+                self.rightButton.page.update()
+                self.rightButton.iconButton.selected = False
+                
+                self.rightButton.update()
+                self.sagTiklandi = False
 
 
