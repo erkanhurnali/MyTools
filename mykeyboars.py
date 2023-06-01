@@ -65,7 +65,9 @@ class TouchKButton(myButtons.MyButton):
             self.iconButton.selected = True
             # os.system("osk")
             # os.system("TabTip")
+            # os.system("./TabTip.exe")
             os.system("TabTip.exe")
+            # os.system("/exe/TabTip.exe")
             self.iconButton.selected = False
 
         self.update()

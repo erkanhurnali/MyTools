@@ -25,20 +25,19 @@ class MouseMonitoring(MyTimer):
         print('\bBasıldı' if pressed else 'Bırakıldı')
         if (button == button.right) and (self.rightButton.iconButton.selected == True) and (self.sagTiklandi==False):
             self.sagTiklandi = True
+            audio2 = ft.Audio(src=f"/sounds/pop_giris.wav", autoplay=True)
+            self.rightButton.page.overlay.append(audio2)
+            self.rightButton.page.update()
+
         else:
 
             if (button == button.right) and (self.rightButton.iconButton.selected == True) and (self.sagTiklandi):
                 print("sanal sağ tuş-pyautogui")
-                # button=button.right
-                # pyautogui.click(button='right')  # right-click the mouse
                 c_fun=CDLL("./mylibl.so")
+                # c_fun=CDLL(f"/c_lib/mylibl.so")
                 c_fun.swap(int(1))
 
 
-                audio2 = ft.Audio(
-                    src="pop_giris.wav", autoplay=True)
-                self.rightButton.page.overlay.append(audio2)
-                self.rightButton.page.update()
                 self.rightButton.iconButton.selected = False
                 
                 self.rightButton.update()

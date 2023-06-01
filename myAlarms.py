@@ -35,8 +35,7 @@ class AlarmButton(myButtons.MyButton):
         self.page.title = "alarm çalıyor"
 
         # super().click(e=e)
-        audio1 = Audio(src="alarm.wav", autoplay=True)
-        # audio1 = Audio(src="alarm.wav", autoplay=True)
+        audio1 = Audio(src=f"/sounds/alarm.wav", autoplay=True)
         self.page.overlay.append(audio1)
         self.page.update()
         time.sleep(5)

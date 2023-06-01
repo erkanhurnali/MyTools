@@ -131,4 +131,4 @@ def main(page: Page):
     MouseMonitoring(rb=rightButton)
     
 
-ft.app(target=main)
+ft.app(target=main, assets_dir="assets")
