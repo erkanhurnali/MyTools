@@ -25,8 +25,8 @@ def main(page: Page):
 
     page.title = "MyTools - GlassOuse"
     page.window_height = 87
-    page.window_top = 700
-    page.window_left = 1200
+    page.window_top = 70
+    page.window_left = 120
     page.window_width = 365
     page.window_always_on_top = True
     page.padding = 0

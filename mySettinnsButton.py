@@ -4,6 +4,7 @@ import myButtons
 import tkinter
 import threading
 import time
+import webbrowser
 
 
 class SettingButton(myButtons.MyButton):
@@ -62,6 +63,20 @@ class SettingButton(myButtons.MyButton):
         # self.settingForm.protocol("WM_DELETE_WINDOW", self.on_closing)
         # self.settingForm.protocol("WM_DELETE_WINDOW",self.settingForm.iconify())
         # self.settingForm.protocol("WM_DELETE_WINDOW",self.settingForm.withdraw())
+
+        # import tkinter as tk
+
+        # my_w = tk.Tk()
+        # my_w.geometry("400x200")
+        def my_open():
+            url = "https://mytools.com.tr"
+            webbrowser.open_new(url)
+
+        my_button = tkinter.Button(self.settingForm,text="https://mytools.com.tr", fg="blue",
+                      cursor="hand2",font=18,command=my_open)
+        
+        my_button.grid(row=1, column=1,padx=20, pady=20)
+# my_w.mainloop()
         self.settingForm.protocol("WM_DELETE_WINDOW",self.whatever)
         self.settingForm.mainloop()
         # self.iconButton.selected = True

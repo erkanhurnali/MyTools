@@ -56,6 +56,10 @@ class MyButton(UserControl):
                         break
                     if i == 100: 
                         self.click(e)
+                        audio3 = ft.Audio(src=f"/sounds/pop.wav", autoplay=True)
+                        self.page.overlay.append(audio3)
+                        self.page.update()
+
         else:
             self.page.title = "MyTools - GlassOuse"
             self.scale=ft.transform.Scale(1)#
