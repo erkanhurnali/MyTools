@@ -41,6 +41,12 @@ def main(page: Page):
     main_row = Row(
         spacing=0,
     )
+    main_row.controls.append(
+        MyButton(icon=icons.PAN_TOOL_OUTLINED,
+                 selected_icon=icons.PAN_TOOL_ROUNDED,
+                 ipucu="Pan", 
+                 color=colors.PURPLE),
+    )
 
     # main_row.controls.append(
     #     MyButton(icon=icons.ADS_CLICK_OUTLINED,
@@ -48,19 +54,6 @@ def main(page: Page):
     #              ipucu="Click on it while waiting", 
     #              color=colors.PURPLE),
     # )
-
-    # from clickWaiting import ClickWatingHiddenForm
-    # main_row.controls.append(ClickWatingHiddenForm())
-    # main_row.controls.append(FletForTkTimer())
-
-    main_row.controls.append(
-        TouchKButton(icon=icons.KEYBOARD_HIDE_OUTLINED,
-                 selected_icon=icons.KEYBOARD_HIDE,
-                 ipucu="Touch keyboard", 
-                 color=colors.PURPLE),
-    )
-
-
     rightButton = RightButton(
         icon=icons.MOUSE_OUTLINED,
         selected_icon=icons.MOUSE,
@@ -72,18 +65,39 @@ def main(page: Page):
         rightButton,
     )
 
+
+    # from clickWaiting import ClickWatingHiddenForm
+    # main_row.controls.append(ClickWatingHiddenForm())
+    # main_row.controls.append(FletForTkTimer())
+
+    # main_row.controls.append(
+    #     TouchKButton(icon=icons.KEYBOARD_HIDE_OUTLINED,
+    #              selected_icon=icons.KEYBOARD_HIDE,
+    #              ipucu="Touch keyboard", 
+    #              color=colors.PURPLE),
+    # )
+
+
+
     main_row.controls.append(AlarmButton(
         icon=icons.NOTIFICATION_IMPORTANT_OUTLINED,
         selected_icon=icons.NOTIFICATION_IMPORTANT,
         ipucu="Sound the alarm", 
         color=colors.AMBER,
     ))
-    main_row.controls.append(OskButton(
-        icon=icons.KEYBOARD_OUTLINED,
-        selected_icon=icons.KEYBOARD,
-        ipucu="On-Screen Keyboard",
-        color=colors.PINK_ACCENT
-    ))
+    # main_row.controls.append(OskButton(
+    #     icon=icons.KEYBOARD_OUTLINED,
+    #     selected_icon=icons.KEYBOARD,
+    #     ipucu="On-Screen Keyboard",
+    #     color=colors.PINK_ACCENT
+    # ))
+    main_row.controls.append(
+        TouchKButton(icon=icons.KEYBOARD_OUTLINED,
+                 selected_icon=icons.KEYBOARD,
+                 ipucu="Touch keyboard", 
+                 color=colors.PINK_ACCENT),
+    )
+
     main_row.controls.append(ToogleButton(
         icon=icons.CHANGE_CIRCLE_OUTLINED,
         selected_icon=icons.CHANGE_CIRCLE,
