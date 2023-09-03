@@ -12,6 +12,7 @@ from pynput.mouse import Button, Controller, Listener
 import time
 from tkinter import *
 import mySettinnsButton
+import myPanButton
 from myFletForTkTimer import FletForTkTimer
 from utils.MyTimer import MyTimer
 from utils.MouseMonitoring import MouseMonitoring
@@ -42,7 +43,7 @@ def main(page: Page):
         spacing=0,
     )
     main_row.controls.append(
-        MyButton(icon=icons.PAN_TOOL_OUTLINED,
+        myPanButton.PanButton(icon=icons.PAN_TOOL_OUTLINED,
                  selected_icon=icons.PAN_TOOL_ROUNDED,
                  ipucu="Pan", 
                  color=colors.PURPLE),
