@@ -46,10 +46,21 @@ class PanButton(myButtons.MyButton):
             url = "https://github.com/erkanhurnali/MyTools"
             webbrowser.open_new(url)
 
-        my_button = tkinter.Button(self.panInformationForm, text="https://github.com/erkanhurnali/MyTools", fg="blue",
+        textEn=""" Friends who are considering supporting
+        the project are kindly requested to start
+        with this tool in particular."""
+        textTr="""(Projeye destek vermeyi düşünen
+        arkadaşların özellikle bu araçtan
+        başlamaları rica olunur.)"""
+        lblEn = tkinter.Label(self.panInformationForm, text=textEn)
+        lblTr = tkinter.Label(self.panInformationForm, text=textTr)
+
+        btnSrcCode = tkinter.Button(self.panInformationForm, text="https://github.com/erkanhurnali/MyTools", fg="blue",
                                    cursor="hand2", font=18, command=my_open)
 
-        my_button.grid(row=1, column=1, padx=20, pady=20)
+        lblEn.pack()
+        lblTr.pack()
+        btnSrcCode.pack()
         self.panInformationForm.protocol("WM_DELETE_WINDOW", self.whatever)
         self.panInformationForm.mainloop()
 

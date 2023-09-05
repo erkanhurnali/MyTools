@@ -1,7 +1,7 @@
 import os
 from flet import icons, colors
 import myButtons
-import tkinter
+import tkinter as tk
 import threading
 import time
 import webbrowser
@@ -54,7 +54,7 @@ class SettingButton(myButtons.MyButton):
 
     def createForm(self):
         # global self.settingsForm
-        self.settingForm = tkinter.Tk()
+        self.settingForm = tk.Tk()
         self.settingForm.title("Settings - GlassOut")
         self.settingForm.geometry("800x500+300+300")
         # self.settingForm.attributes("-alpha",0.5)
@@ -64,18 +64,43 @@ class SettingButton(myButtons.MyButton):
         # self.settingForm.protocol("WM_DELETE_WINDOW",self.settingForm.iconify())
         # self.settingForm.protocol("WM_DELETE_WINDOW",self.settingForm.withdraw())
 
-        # import tkinter as tk
+        def handle_selection():
+            selected_value = self.selected_option.get()
+            if selected_value == "option1":
+                pass
+            elif selected_value == "option2":
+                pass
+            else:
+                pass
 
-        # my_w = tk.Tk()
-        # my_w.geometry("400x200")
+
+        self.selected_option = tk.StringVar()
+        self.selected_option.set("option1") 
+        self.option_frame = tk.Frame(self.settingForm)
+        self.option_frame.pack()
+
+        textLbl= "Your keyboard choice (Klavye tercihiniz)"
+        self.lblKeyboardChoice= tk.Label(self.option_frame, text=textLbl)
+        self.option2 = tk.Radiobutton(self.option_frame, text="On-Screen Keyboard (Ekran Klavyesi)", variable=self.selected_option, value="option2", justify="left")
+        self.option1 = tk.Radiobutton(self.option_frame, text="Touch Keyboard (Dokunmatik Klavye)", variable=self.selected_option, value="option1", justify="left")
+        self.btnOnay = tk.Button(self.option_frame, text="OK", command=handle_selection)
+
+        self.lblKeyboardChoice.pack()  
+        self.option1.pack(anchor="w")  
+        self.option2.pack(anchor="w")
+        self.btnOnay.pack()
+
+
         def my_open():
             url = "https://mytools.com.tr"
             webbrowser.open_new(url)
 
-        my_button = tkinter.Button(self.settingForm,text="https://mytools.com.tr", fg="blue",
+        btnWebSite = tk.Button(self.settingForm,text="https://mytools.com.tr", fg="blue",
                       cursor="hand2",font=18,command=my_open)
         
-        my_button.grid(row=1, column=1,padx=20, pady=20)
+        # btnWebSite.grid(row=2, column=0, sticky="w")
+
+        btnWebSite.pack()
 # my_w.mainloop()
         self.settingForm.protocol("WM_DELETE_WINDOW",self.whatever)
         self.settingForm.mainloop()
