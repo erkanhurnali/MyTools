@@ -23,6 +23,7 @@ class MyButton(UserControl):
         self.size = size
         self.is_hover = False
         self.iconButton = None
+        self.keyboardClass = None
         self.scale=ft.transform.Scale(1)
         self.animate_scale=ft.animation.Animation(100,ft.AnimationCurve.BOUNCE_IN_OUT)#
 

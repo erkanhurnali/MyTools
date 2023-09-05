@@ -67,6 +67,7 @@ class SettingButton(myButtons.MyButton):
         def handle_selection():
             selected_value = self.selected_option.get()
             if selected_value == "option1":
+                # myButtons.MyButton.k
                 pass
             elif selected_value == "option2":
                 pass
@@ -77,7 +78,7 @@ class SettingButton(myButtons.MyButton):
         self.selected_option = tk.StringVar()
         self.selected_option.set("option1") 
         self.option_frame = tk.Frame(self.settingForm)
-        self.option_frame.pack()
+        self.option_frame.pack(pady=50)
 
         textLbl= "Your keyboard choice (Klavye tercihiniz)"
         self.lblKeyboardChoice= tk.Label(self.option_frame, text=textLbl)
@@ -85,10 +86,10 @@ class SettingButton(myButtons.MyButton):
         self.option1 = tk.Radiobutton(self.option_frame, text="Touch Keyboard (Dokunmatik Klavye)", variable=self.selected_option, value="option1", justify="left")
         self.btnOnay = tk.Button(self.option_frame, text="OK", command=handle_selection)
 
-        self.lblKeyboardChoice.pack()  
+        self.lblKeyboardChoice.pack(pady=10)  
         self.option1.pack(anchor="w")  
         self.option2.pack(anchor="w")
-        self.btnOnay.pack()
+        self.btnOnay.pack(pady=20)
 
 
         def my_open():
