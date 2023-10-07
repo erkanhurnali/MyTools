@@ -62,7 +62,7 @@ class MyButton(UserControl):
                         self.page.update()
 
         else:
-            self.page.title = "MyTools - GlassOuse"
+            self.page.title = "MyTools - Tiny"
             self.scale=ft.transform.Scale(1)#
             self.page.update()
 
