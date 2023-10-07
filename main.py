@@ -4,16 +4,12 @@ from myAlarms import AlarmButton
 from myMouseButtons import RightButton
 import utils as utils
 from mykeyboars import OskButton, TouchKButton
-from mySpeakButton import SpeakButton, VoiceButton
 from myShrcuts import CutButton, ToogleButton
 from flet import Page, Container, IconButton, Row, icons, ProgressRing, Stack, colors, UserControl, TextField, Column
 import pyautogui
 from pynput.mouse import Button, Controller, Listener
 import time
 from tkinter import *
-import mySettinnsButton
-import myPanButton
-from myFletForTkTimer import FletForTkTimer
 from utils.MyTimer import MyTimer
 from utils.MouseMonitoring import MouseMonitoring
 from utils.MyTkTimerWithForm import MyTkTimerWithForm
@@ -28,7 +24,7 @@ def main(page: Page):
     page.window_height = 87
     page.window_top = 70
     page.window_left = 120
-    page.window_width = 365
+    page.window_width = 165
     page.window_always_on_top = True
     page.padding = 0
     page.window_resizable = False
