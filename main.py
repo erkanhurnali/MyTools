@@ -70,16 +70,7 @@ def main(page: Page):
         color=colors.CYAN
     ))
 
-    main_row.controls.append(
-        mySettinnsButton.SettingButton(
-            icon=icons.SETTINGS_OUTLINED,
-            selected_icon=icons.SETTINGS,
-            color=colors.AMBER_900,
-            ipucu="Settings",
-        )
-    )
-
-    main_col = Column(controls=[main_row, speakText_row])
+    main_col = Column(controls=[main_row,])
     page.add(main_col)
 
     MouseMonitoring(rb=rightButton)
