@@ -11,7 +11,6 @@ from pynput.mouse import Button, Controller, Listener
 import time
 from tkinter import *
 from utils.MouseMonitoring import MouseMonitoring
-from utils.MyTkTimerWithForm import MyTkTimerWithForm
 
 def main(page: Page):
 
