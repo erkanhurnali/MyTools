@@ -10,7 +10,6 @@ import pyautogui
 from pynput.mouse import Button, Controller, Listener
 import time
 from tkinter import *
-from utils.MyTimer import MyTimer
 from utils.MouseMonitoring import MouseMonitoring
 from utils.MyTkTimerWithForm import MyTkTimerWithForm
 
