@@ -24,7 +24,7 @@ def main(page: Page):
 
     # MyTkTimerWithForm()
 
-    page.title = "MyTools - GlassOuse"
+    page.title = "MyTools - Tiny"
     page.window_height = 87
     page.window_top = 70
     page.window_left = 120
@@ -42,19 +42,6 @@ def main(page: Page):
     main_row = Row(
         spacing=0,
     )
-    main_row.controls.append(
-        myPanButton.PanButton(icon=icons.PAN_TOOL_OUTLINED,
-                 selected_icon=icons.PAN_TOOL_ROUNDED,
-                 ipucu="Pan", 
-                 color=colors.PURPLE),
-    )
-
-    # main_row.controls.append(
-    #     MyButton(icon=icons.ADS_CLICK_OUTLINED,
-    #              selected_icon=icons.ADS_CLICK,
-    #              ipucu="Click on it while waiting", 
-    #              color=colors.PURPLE),
-    # )
     rightButton = RightButton(
         icon=icons.MOUSE_OUTLINED,
         selected_icon=icons.MOUSE,
@@ -67,17 +54,6 @@ def main(page: Page):
     )
 
 
-    # from clickWaiting import ClickWatingHiddenForm
-    # main_row.controls.append(ClickWatingHiddenForm())
-    # main_row.controls.append(FletForTkTimer())
-
-    # main_row.controls.append(
-    #     TouchKButton(icon=icons.KEYBOARD_HIDE_OUTLINED,
-    #              selected_icon=icons.KEYBOARD_HIDE,
-    #              ipucu="Touch keyboard", 
-    #              color=colors.PURPLE),
-    # )
-
 
 
     main_row.controls.append(AlarmButton(
@@ -86,49 +62,12 @@ def main(page: Page):
         ipucu="Sound the alarm", 
         color=colors.AMBER,
     ))
-    # main_row.controls.append(OskButton(
-    #     icon=icons.KEYBOARD_OUTLINED,
-    #     selected_icon=icons.KEYBOARD,
-    #     ipucu="On-Screen Keyboard",
-    #     color=colors.PINK_ACCENT
-    # ))
-    main_row.controls.append(
-        TouchKButton(icon=icons.KEYBOARD_OUTLINED,
-                 selected_icon=icons.KEYBOARD,
-                 ipucu="Touch keyboard", 
-                 color=colors.PINK_ACCENT),
-    )
 
     main_row.controls.append(ToogleButton(
         icon=icons.CHANGE_CIRCLE_OUTLINED,
         selected_icon=icons.CHANGE_CIRCLE,
         ipucu="Change Active Program", 
         color=colors.CYAN
-    ))
-
-    textField = TextField(
-        text_size=30,
-        width=450,
-        hint_text="Please enter the text...",
-        color=colors.CYAN_ACCENT,
-    )
-    voiceButton = VoiceButton(
-        icon=icons.VOLUME_UP_OUTLINED,
-        ipucu="Read",
-        selected_icon=icons.VOLUME_UP,
-        color=colors.CYAN_ACCENT,
-        textField=textField
-    )
-    speakText_row = Row(controls=[textField, voiceButton],)
-
-    speakText_row.visible = False
-
-    main_row.controls.append(SpeakButton(
-        icon=icons.RECORD_VOICE_OVER_OUTLINED,
-        selected_icon=icons.RECORD_VOICE_OVER,
-        ipucu="Read the post", 
-        color=colors.CYAN_ACCENT,
-        speak_row=speakText_row,
     ))
 
     main_row.controls.append(
