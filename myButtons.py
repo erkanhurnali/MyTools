@@ -50,7 +50,7 @@ class MyButton(UserControl):
             self.progressRing.value = 0
             for i in range(101):
                     self.progressRing.value = 0.01*i
-                    time.sleep(0.02)
+                    time.sleep(0.01)
                     self.update()
                     if not self.is_hover:
                         self.progressRing.value = 0

@@ -3,20 +3,12 @@ from myButtons import MyButton
 from myAlarms import AlarmButton
 from myMouseButtons import RightButton
 import utils as utils
-from mykeyboars import OskButton, TouchKButton
 from myShrcuts import CutButton, ToogleButton
 from flet import Page, Container, IconButton, Row, icons, ProgressRing, Stack, colors, UserControl, TextField, Column
-import pyautogui
-from pynput.mouse import Button, Controller, Listener
 import time
-from tkinter import *
 from utils.MouseMonitoring import MouseMonitoring
 
 def main(page: Page):
-
-    # MyTimer()
-
-    # MyTkTimerWithForm()
 
     page.title = "MyTools - Tiny"
     page.window_height = 87
@@ -47,8 +39,12 @@ def main(page: Page):
         rightButton,
     )
 
-
-
+    main_row.controls.append(ToogleButton(
+        icon=icons.CHANGE_CIRCLE_OUTLINED,
+        selected_icon=icons.CHANGE_CIRCLE,
+        ipucu="Change Active Program", 
+        color=colors.CYAN
+    ))
 
     main_row.controls.append(AlarmButton(
         icon=icons.NOTIFICATION_IMPORTANT_OUTLINED,
@@ -57,12 +53,6 @@ def main(page: Page):
         color=colors.AMBER,
     ))
 
-    main_row.controls.append(ToogleButton(
-        icon=icons.CHANGE_CIRCLE_OUTLINED,
-        selected_icon=icons.CHANGE_CIRCLE,
-        ipucu="Change Active Program", 
-        color=colors.CYAN
-    ))
 
     main_col = Column(controls=[main_row,])
     page.add(main_col)
