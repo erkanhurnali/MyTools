@@ -4,7 +4,6 @@ import flet as ft
 from ctypes import *
 
 
-import pyautogui
 
 class MouseMonitoring(MyTimer):
     rightButton =None
@@ -32,7 +31,7 @@ class MouseMonitoring(MyTimer):
         else:
 
             if (button == button.right) and (self.rightButton.iconButton.selected == True) and (self.sagTiklandi):
-                print("sanal sağ tuş-pyautogui")
+                # print("sanal sağ tuş-pyautogui")
                 c_fun=CDLL("./mylibl.so")
                 # c_fun=CDLL(f"/c_lib/mylibl.so")
                 c_fun.swap(int(1))
