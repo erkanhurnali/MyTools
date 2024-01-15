@@ -1,8 +1,7 @@
 import flet as ft
 import time
-import threading
 
-from flet import Page, Container, IconButton, Row, icons, ProgressRing, Stack, colors, UserControl
+from flet import Page, Container, IconButton, icons, ProgressRing, Stack, colors, UserControl
 
 
 class MyButton(UserControl):
@@ -62,7 +61,7 @@ class MyButton(UserControl):
                         self.page.update()
 
         else:
-            self.page.title = "MyTools - Tiny"
+            self.page.title = "TiniMini"
             self.scale=ft.transform.Scale(1)#
             self.page.update()
 
