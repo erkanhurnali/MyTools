@@ -2,7 +2,7 @@ import os
 from flet import UserControl, Audio, icons, colors, Page
 import myButtons
 # from myTools import
-import keyboard
+# import keyboard
 # from pynput.keyboard import Key, Controller
 import time
 # keyboard1 = Controller()
